@@ -33,6 +33,7 @@ public class KarmaService {
     private int valueKillPlayer;
     private int valueKillVillager;
     private int valueKillEvilMob;
+    private double evilMaxHealth;
 
     public KarmaService(Plugin plugin, KarmaStorage storage, FileConfiguration config) {
         this.plugin = plugin;
@@ -54,6 +55,7 @@ public class KarmaService {
         this.valueKillPlayer = config.getInt(ConfigKeys.VALUES_KILL_PLAYER, -20);
         this.valueKillVillager = config.getInt(ConfigKeys.VALUES_KILL_VILLAGER, -15);
         this.valueKillEvilMob = config.getInt(ConfigKeys.VALUES_KILL_EVIL_MOB, 10);
+        this.evilMaxHealth = config.getDouble(ConfigKeys.VALUES_EVIL_MAX_HEALTH, 14.0D);
 
         evilMobs.clear();
         for (String mob : config.getStringList(ConfigKeys.EVIL_MOBS)) {
@@ -121,6 +123,7 @@ public class KarmaService {
     public int getEvilThreshold() { return evilThreshold; }
 
     public int getMaxAbsKarma() { return maxAbsKarma; }
+    public double getEvilMaxHealth() { return evilMaxHealth; }
 
     public void saveKarmaData() { storage.saveSync(); }
 }

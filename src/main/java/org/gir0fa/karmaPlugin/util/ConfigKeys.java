@@ -15,6 +15,7 @@ public final class ConfigKeys {
     public static final String VALUES_KILL_VILLAGER = "values.kill_villager";
     public static final String VALUES_KILL_EVIL_MOB = "values.kill_evil_mob";
     public static final String VALUES_MAX_ABS_KARMA = "values.max_abs_karma";
+    public static final String VALUES_EVIL_MAX_HEALTH = "values.evil_max_health";
 
     // Interval
     public static final String INTERVAL_SECONDS = "interval_seconds";

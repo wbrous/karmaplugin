@@ -1,6 +1,7 @@
 package org.gir0fa.karmaPlugin;
 
 import org.bukkit.Bukkit;
+import org.bukkit.attribute.Attribute;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -55,8 +56,8 @@ public class KarmaPlugin extends JavaPlugin {
                 if (player != null) {
                     getServer().getScheduler().runTask(KarmaPlugin.this, () -> {
                         try {
-                            double targetMax = (newAlignment == Alignment.EVIL) ? 14.0 : 20.0;
-                            var inst = player.getAttribute(org.bukkit.attribute.Attribute.GENERIC_MAX_HEALTH);
+                            double targetMax = (newAlignment == Alignment.EVIL) ? karmaService.getEvilMaxHealth() : 20.0;
+                            var inst = player.getAttribute(Attribute.MAX_HEALTH);
                             if (inst != null && inst.getBaseValue() != targetMax) {
                                 inst.setBaseValue(targetMax);
                                 if (player.getHealth() > targetMax) player.setHealth(targetMax);

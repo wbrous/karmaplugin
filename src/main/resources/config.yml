@@ -9,6 +9,7 @@ values:
   kill_villager: -15
   kill_evil_mob: 10
   max_abs_karma: 9999
+  evil_max_health: 14.0
 
 # Interval in seconds for periodic effects and display updates
 interval_seconds: 5
