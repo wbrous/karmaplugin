@@ -1,4 +1,4 @@
-package org.gir0fa.karmaPlugin.listeners;
+package com.gir0fa.karmaPlugin.listeners;
 
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
@@ -15,10 +15,10 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.projectiles.ProjectileSource;
-import org.gir0fa.karmaPlugin.display.BossBarManager;
-import org.gir0fa.karmaPlugin.display.NameTagManager;
-import org.gir0fa.karmaPlugin.model.Alignment;
-import org.gir0fa.karmaPlugin.service.KarmaService;
+import com.gir0fa.karmaPlugin.display.BossBarManager;
+import com.gir0fa.karmaPlugin.display.NameTagManager;
+import com.gir0fa.karmaPlugin.model.Alignment;
+import com.gir0fa.karmaPlugin.service.KarmaService;
 
 public class KarmaListener implements Listener {
 

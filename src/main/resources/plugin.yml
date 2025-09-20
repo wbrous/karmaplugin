@@ -1,5 +1,5 @@
 name: KarmaPlugin
-main: org.gir0fa.karmaPlugin.KarmaPlugin
+main: com.gir0fa.karmaPlugin.KarmaPlugin
 version: ${project.version}
 api-version: '1.21'
 authors: [Gir0fa]

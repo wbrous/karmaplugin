@@ -1,4 +1,4 @@
-package org.gir0fa.karmaPlugin.listeners;
+package com.gir0fa.karmaPlugin.listeners;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -6,9 +6,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.plugin.Plugin;
-import org.gir0fa.karmaPlugin.model.Alignment;
-import org.gir0fa.karmaPlugin.service.KarmaService;
-import org.gir0fa.karmaPlugin.util.ConfigKeys;
+import com.gir0fa.karmaPlugin.model.Alignment;
+import com.gir0fa.karmaPlugin.service.KarmaService;
+import com.gir0fa.karmaPlugin.util.ConfigKeys;
 
 public class ChatListener implements Listener {
 

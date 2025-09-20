@@ -1,21 +1,20 @@
-package org.gir0fa.karmaPlugin;
+package com.gir0fa.karmaPlugin;
 
-import org.bukkit.Bukkit;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.gir0fa.karmaPlugin.commands.KarmaCommand;
-import org.gir0fa.karmaPlugin.display.BossBarManager;
-import org.gir0fa.karmaPlugin.display.NameTagManager;
-import org.gir0fa.karmaPlugin.display.ParticlesManager;
-import org.gir0fa.karmaPlugin.listeners.KarmaListener;
-import org.gir0fa.karmaPlugin.listeners.ChatListener;
-import org.gir0fa.karmaPlugin.model.Alignment;
-import org.gir0fa.karmaPlugin.scheduler.KarmaEffectsTask;
-import org.gir0fa.karmaPlugin.service.KarmaService;
-import org.gir0fa.karmaPlugin.storage.YamlKarmaStorage;
-import org.gir0fa.karmaPlugin.util.ConfigKeys;
+import com.gir0fa.karmaPlugin.commands.KarmaCommand;
+import com.gir0fa.karmaPlugin.display.BossBarManager;
+import com.gir0fa.karmaPlugin.display.NameTagManager;
+import com.gir0fa.karmaPlugin.display.ParticlesManager;
+import com.gir0fa.karmaPlugin.listeners.KarmaListener;
+import com.gir0fa.karmaPlugin.listeners.ChatListener;
+import com.gir0fa.karmaPlugin.model.Alignment;
+import com.gir0fa.karmaPlugin.scheduler.KarmaEffectsTask;
+import com.gir0fa.karmaPlugin.service.KarmaService;
+import com.gir0fa.karmaPlugin.storage.YamlKarmaStorage;
+import com.gir0fa.karmaPlugin.util.ConfigKeys;
 
 import java.util.UUID;
 

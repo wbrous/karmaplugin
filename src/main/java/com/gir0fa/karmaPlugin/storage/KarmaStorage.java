@@ -1,4 +1,4 @@
-package org.gir0fa.karmaPlugin.storage;
+package com.gir0fa.karmaPlugin.storage;
 
 import java.util.UUID;
 

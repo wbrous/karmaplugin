@@ -1,4 +1,4 @@
-package org.gir0fa.karmaPlugin.util;
+package com.gir0fa.karmaPlugin.util;
 
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;

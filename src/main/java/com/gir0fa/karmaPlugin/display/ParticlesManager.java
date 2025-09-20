@@ -1,13 +1,12 @@
-package org.gir0fa.karmaPlugin.display;
+package com.gir0fa.karmaPlugin.display;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
-import org.gir0fa.karmaPlugin.model.Alignment;
-import org.gir0fa.karmaPlugin.service.KarmaService;
-import org.gir0fa.karmaPlugin.util.ConfigKeys;
+import com.gir0fa.karmaPlugin.model.Alignment;
+import com.gir0fa.karmaPlugin.service.KarmaService;
+import com.gir0fa.karmaPlugin.util.ConfigKeys;
 
 public class ParticlesManager {
 

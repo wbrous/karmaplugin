@@ -1,13 +1,11 @@
-package org.gir0fa.karmaPlugin.service;
+package com.gir0fa.karmaPlugin.service;
 
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
-import org.gir0fa.karmaPlugin.model.Alignment;
-import org.gir0fa.karmaPlugin.storage.KarmaStorage;
-import org.gir0fa.karmaPlugin.util.ConfigKeys;
+import com.gir0fa.karmaPlugin.model.Alignment;
+import com.gir0fa.karmaPlugin.storage.KarmaStorage;
+import com.gir0fa.karmaPlugin.util.ConfigKeys;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;

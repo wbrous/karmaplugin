@@ -1,4 +1,4 @@
-package org.gir0fa.karmaPlugin.model;
+package com.gir0fa.karmaPlugin.model;
 
 public enum Alignment {
     GOOD,

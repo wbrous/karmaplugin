@@ -1,4 +1,4 @@
-package org.gir0fa.karmaPlugin.scheduler;
+package com.gir0fa.karmaPlugin.scheduler;
 
 import org.bukkit.Bukkit;
 import org.bukkit.attribute.Attribute;
@@ -8,11 +8,11 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.plugin.Plugin;
-import org.gir0fa.karmaPlugin.display.BossBarManager;
-import org.gir0fa.karmaPlugin.display.NameTagManager;
-import org.gir0fa.karmaPlugin.display.ParticlesManager;
-import org.gir0fa.karmaPlugin.model.Alignment;
-import org.gir0fa.karmaPlugin.service.KarmaService;
+import com.gir0fa.karmaPlugin.display.BossBarManager;
+import com.gir0fa.karmaPlugin.display.NameTagManager;
+import com.gir0fa.karmaPlugin.display.ParticlesManager;
+import com.gir0fa.karmaPlugin.model.Alignment;
+import com.gir0fa.karmaPlugin.service.KarmaService;
 
 public class KarmaEffectsTask extends BukkitRunnable {
 

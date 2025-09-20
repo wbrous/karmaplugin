@@ -1,5 +1,6 @@
-package org.gir0fa.karmaPlugin.commands;
+package com.gir0fa.karmaPlugin.commands;
 
+import com.gir0fa.karmaPlugin.KarmaPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
@@ -9,8 +10,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
-import org.gir0fa.karmaPlugin.model.Alignment;
-import org.gir0fa.karmaPlugin.service.KarmaService;
+import com.gir0fa.karmaPlugin.model.Alignment;
+import com.gir0fa.karmaPlugin.service.KarmaService;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -93,7 +94,7 @@ public class KarmaCommand implements CommandExecutor, TabCompleter {
                     return true;
                 }
                 Bukkit.getScheduler().runTask(plugin, () -> {
-                    if (plugin instanceof org.gir0fa.karmaPlugin.KarmaPlugin kp) {
+                    if (plugin instanceof KarmaPlugin kp) {
                         kp.reloadPlugin();
                     } else {
                         plugin.reloadConfig();
