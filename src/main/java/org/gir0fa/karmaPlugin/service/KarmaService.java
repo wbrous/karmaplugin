@@ -69,9 +69,7 @@ public class KarmaService {
         listeners.add(listener);
     }
 
-    public void unregisterListener(KarmaChangeListener listener) {
-        listeners.remove(listener);
-    }
+    public void unregisterListener(KarmaChangeListener listener) { listeners.remove(listener); }
 
     public int getKarma(UUID playerId) {
         return storage.getKarma(playerId);
