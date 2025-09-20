@@ -1,0 +1,6 @@
+name: KarmaPlugin
+version: '0.1-BETA'
+main: org.gir0fa.karmaPlugin.KarmaPlugin
+api-version: '1.21'
+authors: [Gir0fa]
+description: A plugin that rewards players for good behavior and punishes them for being bad.
