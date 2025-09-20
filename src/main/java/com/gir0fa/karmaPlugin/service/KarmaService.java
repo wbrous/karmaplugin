@@ -31,6 +31,9 @@ public class KarmaService {
     private int valueKillPlayer;
     private int valueKillVillager;
     private int valueKillEvilMob;
+    private int valueKillPlayerGood;
+    private int valueKillPlayerNeutral;
+    private int valueKillPlayerEvil;
     private double evilMaxHealth;
 
     public KarmaService(Plugin plugin, KarmaStorage storage, FileConfiguration config) {
@@ -53,6 +56,10 @@ public class KarmaService {
         this.valueKillPlayer = config.getInt(ConfigKeys.VALUES_KILL_PLAYER, -20);
         this.valueKillVillager = config.getInt(ConfigKeys.VALUES_KILL_VILLAGER, -15);
         this.valueKillEvilMob = config.getInt(ConfigKeys.VALUES_KILL_EVIL_MOB, 10);
+        // Fallback to legacy kill_player for all if specific keys are missing
+        this.valueKillPlayerGood = config.getInt(ConfigKeys.VALUES_KILL_PLAYER_GOOD, config.getInt(ConfigKeys.VALUES_KILL_PLAYER, -20));
+        this.valueKillPlayerNeutral = config.getInt(ConfigKeys.VALUES_KILL_PLAYER_NEUTRAL, config.getInt(ConfigKeys.VALUES_KILL_PLAYER, -20));
+        this.valueKillPlayerEvil = config.getInt(ConfigKeys.VALUES_KILL_PLAYER_EVIL, config.getInt(ConfigKeys.VALUES_KILL_PLAYER, -20));
         this.evilMaxHealth = config.getDouble(ConfigKeys.VALUES_EVIL_MAX_HEALTH, 14.0D);
 
         evilMobs.clear();
@@ -116,6 +123,9 @@ public class KarmaService {
     public int getValueKillPlayer() { return valueKillPlayer; }
     public int getValueKillVillager() { return valueKillVillager; }
     public int getValueKillEvilMob() { return valueKillEvilMob; }
+    public int getValueKillPlayerGood() { return valueKillPlayerGood; }
+    public int getValueKillPlayerNeutral() { return valueKillPlayerNeutral; }
+    public int getValueKillPlayerEvil() { return valueKillPlayerEvil; }
 
     public int getGoodThreshold() { return goodThreshold; }
     public int getEvilThreshold() { return evilThreshold; }

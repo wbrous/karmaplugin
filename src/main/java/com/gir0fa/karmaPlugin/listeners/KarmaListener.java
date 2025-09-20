@@ -53,7 +53,15 @@ public class KarmaListener implements Listener {
         Player victim = event.getEntity();
         Player killer = victim.getKiller();
         if (killer != null && killer != victim) {
-            karmaService.addKarma(killer.getUniqueId(), karmaService.getValueKillPlayer());
+            // Alignment-based player kill changes
+            Alignment victimAlignment = karmaService.getAlignment(victim.getUniqueId());
+            int delta;
+            switch (victimAlignment) {
+                case EVIL -> delta = karmaService.getValueKillPlayerEvil();   // killing evil: increase karma
+                case GOOD -> delta = karmaService.getValueKillPlayerGood();   // killing good: decrease karma
+                default -> delta = karmaService.getValueKillPlayerNeutral();  // neutral: configurable decision
+            }
+            karmaService.addKarma(killer.getUniqueId(), delta);
         }
     }
 

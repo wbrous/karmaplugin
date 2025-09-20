@@ -5,7 +5,15 @@ thresholds:
   evil: -50
 
 values:
+  # Legacy default for all player kills (used as fallback for the specific keys below)
   kill_player: -20
+  # Specific deltas by victim alignment (override legacy kill_player):
+  # Killing an EVIL player should raise karma (defaults to +10)
+  kill_player_evil: 10
+  # Killing a GOOD player should lower karma (defaults to -20)
+  kill_player_good: -20
+  # Killing a NEUTRAL player (defaults to -5)
+  kill_player_neutral: -5
   kill_villager: -15
   kill_evil_mob: 10
   max_abs_karma: 9999

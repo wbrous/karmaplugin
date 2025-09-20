@@ -12,6 +12,9 @@ public final class ConfigKeys {
 
     // Values
     public static final String VALUES_KILL_PLAYER = "values.kill_player";
+    public static final String VALUES_KILL_PLAYER_GOOD = "values.kill_player_good";
+    public static final String VALUES_KILL_PLAYER_NEUTRAL = "values.kill_player_neutral";
+    public static final String VALUES_KILL_PLAYER_EVIL = "values.kill_player_evil";
     public static final String VALUES_KILL_VILLAGER = "values.kill_villager";
     public static final String VALUES_KILL_EVIL_MOB = "values.kill_evil_mob";
     public static final String VALUES_MAX_ABS_KARMA = "values.max_abs_karma";

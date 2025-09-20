@@ -101,6 +101,6 @@ After changing, run `/karma reload`.
 ## License
 Provided as-is. Always back up your server before adding new plugins. See [the license](LICENSE.md) for more details.
 
-—
+---
 
 Developers: See [DEVELOPERS.md](DEVELOPERS.md) for build instructions, architecture, and contribution guidelines.
