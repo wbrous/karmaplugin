@@ -1,0 +1,38 @@
+# KarmaSMP configuration
+
+thresholds:
+  good: 50
+  evil: -50
+
+values:
+  kill_player: -20
+  kill_villager: -15
+  kill_evil_mob: 10
+  max_abs_karma: 9999
+
+# Interval in seconds for periodic effects and display updates
+interval_seconds: 5
+
+display:
+  bossbar_enabled: true
+  name_tag_enabled: true
+  name_color_enabled: true
+  particles_enabled: true
+  bossbar_style: NOTCHED_12
+  bossbar_titles:
+    good: "Karma: %value% (Good)"
+    neutral: "Karma: %value% (Neutral)"
+    evil: "Karma: %value% (Evil)"
+  name_tag:
+    good_prefix: "&a[Good] "
+    neutral_prefix: "&7[Neutral] "
+    evil_prefix: "&c[Evil] "
+
+evil_mobs: [ZOMBIE, HUSK, DROWNED, SKELETON, STRAY, WITHER_SKELETON, CREEPER, SPIDER, CAVE_SPIDER, ENDERMAN, PHANTOM, WITCH, PILLAGER, VINDICATOR, RAVAGER, SLIME, MAGMA_CUBE]
+
+colors:
+  good: "&a"
+  neutral: "&7"
+  evil: "&c"
+
+

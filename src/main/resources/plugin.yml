@@ -1,6 +1,19 @@
 name: KarmaPlugin
-version: '0.1-BETA'
 main: org.gir0fa.karmaPlugin.KarmaPlugin
+version: ${project.version}
 api-version: '1.21'
 authors: [Gir0fa]
-description: A plugin that rewards players for good behavior and punishes them for being bad.
+description: ${project.description}
+commands:
+  karma:
+    description: View and manage karma
+    usage: /karma [get|give|take|set|reload] ...
+    aliases: [k]
+    permission: karma.use
+permissions:
+  karma.use:
+    default: true
+  karma.view.others:
+    default: op
+  karma.admin:
+    default: op
