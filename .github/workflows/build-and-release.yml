@@ -3,11 +3,8 @@ name: Build and Draft Release
 on:
   workflow_dispatch:
     inputs:
-      tag:
-        description: 'Release tag (e.g., v1.0.0)'
-        required: true
       title:
-        description: 'Release title (defaults to tag)'
+        description: 'Release title (optional)'
         required: false
 
 jobs:
@@ -28,13 +25,19 @@ jobs:
       - name: Build with Maven
         run: mvn -B -q clean package
 
+      - name: Extract Maven version
+        id: get_version
+        run: |
+          VERSION=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive org.codehaus.mojo:exec-maven-plugin:3.1.0:exec)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
       - name: Create draft release and upload JAR(s)
         uses: softprops/action-gh-release@v2
         with:
           draft: true
           generate_release_notes: true
-          tag_name: ${{ github.event.inputs.tag }}
-          name: ${{ github.event.inputs.title || github.event.inputs.tag }}
+          tag_name: v${{ steps.get_version.outputs.version }}
+          name: ${{ github.event.inputs.title || format('Release v{0}', steps.get_version.outputs.version) }}
           files: |
             target/*.jar
         env:
