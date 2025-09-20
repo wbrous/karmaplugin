@@ -50,7 +50,7 @@ public class KarmaCommand implements CommandExecutor, TabCompleter {
                     return true;
                 }
                 OfflinePlayer target = Bukkit.getOfflinePlayer(args[1]);
-                if (target == null || (target.getName() == null && !target.hasPlayedBefore())) {
+                if (target.getName() == null && !target.hasPlayedBefore()) {
                     sender.sendMessage(ChatColor.RED + "Player not found: " + args[1]);
                     return true;
                 }
@@ -69,7 +69,7 @@ public class KarmaCommand implements CommandExecutor, TabCompleter {
                     return true;
                 }
                 OfflinePlayer target = Bukkit.getOfflinePlayer(args[1]);
-                if (target == null || (target.getName() == null && !target.hasPlayedBefore())) {
+                if (target.getName() == null && !target.hasPlayedBefore()) {
                     sender.sendMessage(ChatColor.RED + "Player not found: " + args[1]);
                     return true;
                 }
