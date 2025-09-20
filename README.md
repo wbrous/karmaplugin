@@ -1,6 +1,6 @@
-# KarmaSMP
+# KarmaPlugin
 
-KarmaSMP adds an immersive morality system to your Minecraft server. Your actions change your alignment — Good, Neutral, or Evil — and the world reacts accordingly. You’ll see your karma as a personal BossBar and a small prefix above your name, gain lightweight effects, and even influence mob behavior.
+KarmaPlugin adds an immersive morality system to your Minecraft server. Your actions change your alignment — Good, Neutral, or Evil — and the world reacts accordingly. You’ll see your karma as a personal BossBar and a small prefix above your name, gain lightweight effects, and even influence mob behavior.
 
 ## Highlights
 - Alignment system: Good, Neutral, Evil
@@ -38,7 +38,7 @@ All numbers and the “evil mob” list are configurable.
 
 ## Install
 1) Place the JAR into your server’s `plugins/` folder.
-2) Start the server to generate `plugins/KarmaSMP/config.yml` and `karma.yml`.
+2) Start the server to generate `plugins/KarmaPlugin/config.yml` and `karma.yml`.
 3) Adjust settings in `config.yml` as desired.
 4) Use `/karma reload` to apply changes without restarting.
 
@@ -61,7 +61,7 @@ Tab completion is provided for subcommands and player names.
 - `karma.admin` — Default: op
 
 ## Configuration quick reference
-Config file: `plugins/KarmaSMP/config.yml` (created on first run)
+Config file: `plugins/KarmaPlugin/config.yml` (created on first run)
 
 - `thresholds.good` — Default: 50
 - `thresholds.evil` — Default: -50
@@ -95,7 +95,7 @@ After changing, run `/karma reload`.
 - Health not reducing for Evil: Check `values.evil_max_health`, then `/karma reload`. Some plugins might modify health attributes; try relogging.
 
 ## Privacy & performance
-- Karma is stored in `plugins/KarmaSMP/karma.yml` by UUID. Writes are debounced to avoid lag.
+- Karma is stored in `plugins/KarmaPlugin/karma.yml` by UUID. Writes are debounced to avoid lag.
 - No scoreboard objectives are created or modified; only teams for name tag prefix/color are used.
 
 ## License
