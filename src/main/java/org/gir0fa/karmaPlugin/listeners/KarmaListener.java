@@ -8,6 +8,7 @@ import org.bukkit.entity.Villager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityTargetLivingEntityEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -15,6 +16,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.projectiles.ProjectileSource;
 import org.gir0fa.karmaPlugin.display.BossBarManager;
 import org.gir0fa.karmaPlugin.display.NameTagManager;
+import org.gir0fa.karmaPlugin.model.Alignment;
 import org.gir0fa.karmaPlugin.service.KarmaService;
 
 public class KarmaListener implements Listener {
@@ -78,6 +80,19 @@ public class KarmaListener implements Listener {
             }
             if (killer != null) {
                 karmaService.addKarma(killer.getUniqueId(), karmaService.getValueKillEvilMob());
+            }
+        }
+    }
+
+    @EventHandler
+    public void onEntityTarget(EntityTargetLivingEntityEvent event) {
+        if (!(event.getTarget() instanceof Player player)) return;
+        // Only block targeting if attacker is an "evil" mob and player is EVIL alignment
+        if (karmaService.isEvilMob(event.getEntity().getType())) {
+            Alignment alignment = karmaService.getAlignment(player.getUniqueId());
+            if (alignment == Alignment.EVIL) {
+                event.setTarget(null);
+                event.setCancelled(true);
             }
         }
     }

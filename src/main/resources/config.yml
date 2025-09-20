@@ -1,4 +1,4 @@
-# KarmaSMP configuration
+# KarmaPlugin configuration
 
 thresholds:
   good: 50
@@ -18,7 +18,7 @@ display:
   name_tag_enabled: true
   name_color_enabled: true
   particles_enabled: true
-  bossbar_style: NOTCHED_12
+  bossbar_style: SEGMENTED_12
   bossbar_titles:
     good: "Karma: %value% (Good)"
     neutral: "Karma: %value% (Neutral)"
