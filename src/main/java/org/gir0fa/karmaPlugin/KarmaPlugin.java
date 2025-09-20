@@ -10,6 +10,7 @@ import org.gir0fa.karmaPlugin.display.BossBarManager;
 import org.gir0fa.karmaPlugin.display.NameTagManager;
 import org.gir0fa.karmaPlugin.display.ParticlesManager;
 import org.gir0fa.karmaPlugin.listeners.KarmaListener;
+import org.gir0fa.karmaPlugin.listeners.ChatListener;
 import org.gir0fa.karmaPlugin.model.Alignment;
 import org.gir0fa.karmaPlugin.scheduler.KarmaEffectsTask;
 import org.gir0fa.karmaPlugin.service.KarmaService;
@@ -70,6 +71,7 @@ public class KarmaPlugin extends JavaPlugin {
 
         // Listeners
         getServer().getPluginManager().registerEvents(new KarmaListener(this, karmaService, bossBarManager, nameTagManager), this);
+        getServer().getPluginManager().registerEvents(new ChatListener(this, karmaService), this);
 
         // Command
         PluginCommand cmd = getCommand("karma");

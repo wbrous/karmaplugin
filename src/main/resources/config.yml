@@ -19,6 +19,7 @@ display:
   name_tag_enabled: true
   name_color_enabled: true
   particles_enabled: true
+  chat_enabled: false
   bossbar_style: SEGMENTED_12
   bossbar_titles:
     good: "Karma: %value% (Good)"

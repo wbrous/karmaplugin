@@ -37,7 +37,7 @@ public class KarmaEffectsTask extends BukkitRunnable {
 
             // Max health adjustment: EVIL -> 14.0 (7 hearts), others -> 20.0
             double targetMax = (alignment == Alignment.EVIL) ? karmaService.getEvilMaxHealth() : 20.0;
-            AttributeInstance maxHealth = p.getAttribute(Attribute.GENERIC_MAX_HEALTH);
+            AttributeInstance maxHealth = p.getAttribute(Attribute.MAX_HEALTH);
             if (maxHealth != null && maxHealth.getBaseValue() != targetMax) {
                 maxHealth.setBaseValue(targetMax);
                 if (p.getHealth() > targetMax) {

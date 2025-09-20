@@ -25,6 +25,7 @@ public final class ConfigKeys {
     public static final String DISPLAY_NAME_TAG_ENABLED = "display.name_tag_enabled";
     public static final String DISPLAY_NAME_COLOR_ENABLED = "display.name_color_enabled";
     public static final String DISPLAY_PARTICLES_ENABLED = "display.particles_enabled";
+    public static final String DISPLAY_CHAT_ENABLED = "display.chat_enabled";
     public static final String DISPLAY_BOSSBAR_STYLE = "display.bossbar_style";
 
     public static final String DISPLAY_BOSSBAR_TITLES_GOOD = "display.bossbar_titles.good";
