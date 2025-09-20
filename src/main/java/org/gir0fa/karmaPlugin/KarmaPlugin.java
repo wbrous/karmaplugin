@@ -50,6 +50,20 @@ public class KarmaPlugin extends JavaPlugin {
             public void onAlignmentChange(UUID playerId, Alignment oldAlignment, Alignment newAlignment) {
                 bossBarManager.updatePlayer(playerId);
                 nameTagManager.assignPlayerToAlignmentTeam(playerId);
+                // Apply health cap immediately on alignment change
+                var player = getServer().getPlayer(playerId);
+                if (player != null) {
+                    getServer().getScheduler().runTask(KarmaPlugin.this, () -> {
+                        try {
+                            double targetMax = (newAlignment == Alignment.EVIL) ? 14.0 : 20.0;
+                            var inst = player.getAttribute(org.bukkit.attribute.Attribute.GENERIC_MAX_HEALTH);
+                            if (inst != null && inst.getBaseValue() != targetMax) {
+                                inst.setBaseValue(targetMax);
+                                if (player.getHealth() > targetMax) player.setHealth(targetMax);
+                            }
+                        } catch (Throwable ignored) {}
+                    });
+                }
             }
         });
 

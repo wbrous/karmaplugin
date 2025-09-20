@@ -9,6 +9,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityTargetLivingEntityEvent;
+import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -95,6 +96,14 @@ public class KarmaListener implements Listener {
                 event.setCancelled(true);
             }
         }
+    }
+
+    @EventHandler
+    public void onPlayerRespawn(PlayerRespawnEvent event) {
+        Player player = event.getPlayer();
+        // Re-apply health cap via next scheduler run and update displays immediately
+        bossBarManager.updatePlayer(player.getUniqueId());
+        nameTagManager.assignPlayerToAlignmentTeam(player.getUniqueId());
     }
 
     private Player resolveDamagerPlayer(Entity potentialDamager) {

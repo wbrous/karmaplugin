@@ -1,6 +1,8 @@
 package org.gir0fa.karmaPlugin.scheduler;
 
 import org.bukkit.Bukkit;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeInstance;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -32,6 +34,16 @@ public class KarmaEffectsTask extends BukkitRunnable {
     public void run() {
         for (Player p : Bukkit.getOnlinePlayers()) {
             Alignment alignment = karmaService.getAlignment(p.getUniqueId());
+
+            // Max health adjustment: EVIL -> 14.0 (7 hearts), others -> 20.0
+            double targetMax = (alignment == Alignment.EVIL) ? 14.0 : 20.0;
+            AttributeInstance maxHealth = p.getAttribute(Attribute.GENERIC_MAX_HEALTH);
+            if (maxHealth != null && maxHealth.getBaseValue() != targetMax) {
+                maxHealth.setBaseValue(targetMax);
+                if (p.getHealth() > targetMax) {
+                    p.setHealth(targetMax);
+                }
+            }
 
             // Effects ~6 seconds so they bridge a 5 second interval
             if (alignment == Alignment.GOOD) {
