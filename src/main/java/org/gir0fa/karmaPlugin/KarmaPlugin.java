@@ -29,7 +29,7 @@ public class KarmaPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        getLogger().info("Enabling KarmaSMP...");
+        getLogger().info("Enabling KarmaPlugin...");
         saveDefaultConfig();
 
         // Storage and service
@@ -89,8 +89,6 @@ public class KarmaPlugin extends JavaPlugin {
 
         // Schedule periodic effects and display updates
         scheduleEffectsTask();
-
-        getLogger().info("KarmaSMP enabled.");
     }
 
     @Override
@@ -104,11 +102,11 @@ public class KarmaPlugin extends JavaPlugin {
         if (nameTagManager != null) nameTagManager.cleanup();
         if (particlesManager != null) particlesManager.cleanup();
         if (karmaService != null) karmaService.saveKarmaData();
-        getLogger().info("KarmaSMP disabled.");
+        getLogger().info("KarmaPlugin disabled.");
     }
 
     public void reloadPlugin() {
-        getLogger().info("Reloading KarmaSMP config...");
+        getLogger().info("Reloading KarmaPlugin config...");
         reloadConfig();
         FileConfiguration cfg = getConfig();
         karmaService.reloadConfig(cfg);
@@ -124,7 +122,7 @@ public class KarmaPlugin extends JavaPlugin {
         // Update all online players immediately after reload
         bossBarManager.updateAll();
         nameTagManager.refreshAllOnline();
-        getLogger().info("KarmaSMP reload complete.");
+        getLogger().info("KarmaPlugin reload complete.");
     }
 
     private void scheduleEffectsTask() {
