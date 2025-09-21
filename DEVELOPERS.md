@@ -80,4 +80,4 @@ src/main/resources/
 - Match existing style; keep changes focused; include config docs as needed
 
 ## License
-- See repository license file
+- See repository [license](LICENSE.md) file
