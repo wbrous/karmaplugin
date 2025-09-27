@@ -9,6 +9,7 @@ KarmaPlugin adds an immersive morality system to your Minecraft server. Your act
 - Subtle green/red particles by alignment (optional)
 - Periodic effects (Good: Regeneration & Speed, Evil: Strength & Speed)
 - Hostile mobs (configurable list) ignore Evil players
+- Iron golems actively hunt Evil players on sight
 - Fully configurable thresholds, values, visuals, and effects
 - Optional alignment prefix in vanilla chat
 
@@ -30,7 +31,8 @@ All numbers and the “evil mob” list are configurable.
 - Name tag: A short prefix like [Good] / [Neutral] / [Evil] appears above your head via Scoreboard Teams (no objectives used). Optional color.
 - Particles: Small colored dust near you (green=Good, red=Evil). Toggleable.
 - Potion effects: Applied gently every few seconds to avoid stacking.
-- Evil max health: Evil players’ max health can be reduced (default 7 hearts). Configurable.
+- Evil max health: Evil players' max health can be reduced (default 7 hearts). Configurable.
+- Iron golem hunting: Iron golems actively seek out and attack Evil players within 16 blocks every 2 seconds.
 
 ## Requirements
 - Server: Spigot 1.21.8
@@ -99,7 +101,7 @@ After changing, run `/karma reload`.
 - No scoreboard objectives are created or modified; only teams for name tag prefix/color are used.
 
 ## License
-Provided as-is. Always back up your server before adding new plugins. See [the license](LICENSE.md) for more details.
+Provided as-is. Always back up your server before adding new plugins. See [the license](LICENSE) for more details.
 
 ---
 
