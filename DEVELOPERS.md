@@ -46,6 +46,7 @@ src/main/resources/
 - Name tags via Scoreboard Teams; no scoreboard objectives created
 - Particles optional and subtle; avoid spam
 - EVIL max health configurable via `values.evil_max_health`
+- Iron golems actively hunt Evil players: runs every 2 seconds, scans 16-block radius
 - Debounced YAML writes; avoid blocking main thread
 
 ## Configuration keys (summary)
@@ -65,6 +66,7 @@ src/main/resources/
 - Add new karma sources: create a listener for the relevant event and call `karmaService.addKarma(uuid, delta)`.
 - New visuals: add a manager under `display/` and wire in `KarmaPlugin`.
 - Storage backends: implement `KarmaStorage`, register in `KarmaPlugin`.
+- New mob behaviors: create a scheduler task similar to `IronGolemHuntTask` for custom mob AI.
 
 ## Coding conventions
 - Java 22; clear variable names; short, readable methods
@@ -75,10 +77,11 @@ src/main/resources/
 ## Testing locally
 - Build JAR and drop into a Spigot 1.21.8 dev server
 - Verify: kills adjust karma; BossBar/title/progress; name tag prefixes; effects/particles; `/karma` commands; `/karma reload`
+- Test iron golem hunting: become Evil alignment and spawn iron golems nearby; they should actively target you
 
 ## Contributions
 - Open issues/PRs with clear descriptions and reproduction steps
 - Match existing style; keep changes focused; include config docs as needed
 
 ## License
-- See repository [license](LICENSE.md) file
+- See repository [license](LICENSE) file
