@@ -101,7 +101,7 @@ After changing, run `/karma reload`.
 - No scoreboard objectives are created or modified; only teams for name tag prefix/color are used.
 
 ## License
-Provided as-is. Always back up your server before adding new plugins. See [the license](LICENSE.md) for more details.
+Provided as-is. Always back up your server before adding new plugins. See [the license](LICENSE) for more details.
 
 ---
 
