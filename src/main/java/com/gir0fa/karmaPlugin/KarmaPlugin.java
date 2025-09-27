@@ -12,6 +12,7 @@ import com.gir0fa.karmaPlugin.listeners.KarmaListener;
 import com.gir0fa.karmaPlugin.listeners.ChatListener;
 import com.gir0fa.karmaPlugin.model.Alignment;
 import com.gir0fa.karmaPlugin.scheduler.KarmaEffectsTask;
+import com.gir0fa.karmaPlugin.scheduler.IronGolemHuntTask;
 import com.gir0fa.karmaPlugin.service.KarmaService;
 import com.gir0fa.karmaPlugin.storage.YamlKarmaStorage;
 import com.gir0fa.karmaPlugin.util.ConfigKeys;
@@ -25,6 +26,7 @@ public class KarmaPlugin extends JavaPlugin {
     private NameTagManager nameTagManager;
     private ParticlesManager particlesManager;
     private KarmaEffectsTask effectsTask;
+    private IronGolemHuntTask ironGolemHuntTask;
 
     @Override
     public void onEnable() {
@@ -88,6 +90,10 @@ public class KarmaPlugin extends JavaPlugin {
 
         // Schedule periodic effects and display updates
         scheduleEffectsTask();
+        
+        // Schedule iron golem hunting task (every 2 seconds)
+        ironGolemHuntTask = new IronGolemHuntTask(karmaService);
+        ironGolemHuntTask.runTaskTimer(this, 40L, 40L); // 40 ticks = 2 seconds
     }
 
     @Override
@@ -96,6 +102,10 @@ public class KarmaPlugin extends JavaPlugin {
         if (effectsTask != null) {
             effectsTask.cancel();
             effectsTask = null;
+        }
+        if (ironGolemHuntTask != null) {
+            ironGolemHuntTask.cancel();
+            ironGolemHuntTask = null;
         }
         if (bossBarManager != null) bossBarManager.cleanup();
         if (nameTagManager != null) nameTagManager.cleanup();
@@ -118,6 +128,14 @@ public class KarmaPlugin extends JavaPlugin {
             effectsTask = null;
         }
         scheduleEffectsTask();
+        
+        // Reschedule iron golem hunt task
+        if (ironGolemHuntTask != null) {
+            ironGolemHuntTask.cancel();
+            ironGolemHuntTask = null;
+        }
+        ironGolemHuntTask = new IronGolemHuntTask(karmaService);
+        ironGolemHuntTask.runTaskTimer(this, 40L, 40L); // 40 ticks = 2 seconds
         // Update all online players immediately after reload
         bossBarManager.updateAll();
         nameTagManager.refreshAllOnline();

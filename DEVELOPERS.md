@@ -30,6 +30,7 @@ src/main/java/org/gir0fa/karmaPlugin/
     ChatListener.java             # Optional vanilla chat prefix injection
   scheduler/
     KarmaEffectsTask.java         # Periodic effects + UI refresh
+    IronGolemHuntTask.java        # Iron golem hunting behavior for evil players
   commands/
     KarmaCommand.java             # /karma get/give/take/set/reload + tab completion
 src/main/resources/

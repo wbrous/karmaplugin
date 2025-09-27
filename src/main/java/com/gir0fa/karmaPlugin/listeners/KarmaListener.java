@@ -1,6 +1,7 @@
 package com.gir0fa.karmaPlugin.listeners;
 
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.IronGolem;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
@@ -121,6 +122,29 @@ public class KarmaListener implements Listener {
             if (source instanceof Player p) return p;
         }
         return null;
+    }
+
+    /**
+     * Makes iron golems actively hunt evil players within range
+     */
+    public void makeIronGolemsHuntEvilPlayers() {
+        for (Player player : plugin.getServer().getOnlinePlayers()) {
+            Alignment alignment = karmaService.getAlignment(player.getUniqueId());
+            if (alignment != Alignment.EVIL) continue;
+
+            // Find iron golems within 16 blocks of the evil player
+            for (Entity entity : player.getWorld().getNearbyEntities(player.getLocation(), 16, 16, 16)) {
+                if (entity instanceof IronGolem golem) {
+                    // Check if golem is not already targeting someone or is targeting a non-evil player
+                    LivingEntity currentTarget = golem.getTarget();
+                    if (currentTarget == null || 
+                        !(currentTarget instanceof Player targetPlayer) || 
+                        karmaService.getAlignment(targetPlayer.getUniqueId()) != Alignment.EVIL) {
+                        golem.setTarget(player);
+                    }
+                }
+            }
+        }
     }
 }
 
