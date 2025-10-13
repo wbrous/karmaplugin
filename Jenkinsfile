@@ -1,7 +1,7 @@
 pipeline {
     agent {
-        dockerfile {
-            filename 'Dockerfile'
+        docker {
+            image 'maven:3.9.6-eclipse-temurin-22'
             args '-v $HOME/.m2:/root/.m2'
         }
     }
@@ -21,29 +21,22 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building KarmaPlugin with Maven...'
-                sh 'mvn clean compile -B -V'
+                sh 'mvn -B -DskipTests clean package'
             }
         }
         
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                // Add test command if you have tests configured
+                // Uncomment when tests are configured
                 // sh 'mvn test -B'
                 echo 'No tests configured yet'
             }
         }
         
-        stage('Package') {
+        stage('Archive Artifacts') {
             steps {
-                echo 'Packaging the plugin...'
-                sh 'mvn package -B -DskipTests'
-            }
-        }
-        
-        stage('Archive') {
-            steps {
-                echo 'Archiving artifacts...'
+                echo 'Archiving build artifacts...'
                 archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
             }
         }
