@@ -2,12 +2,7 @@ pipeline {
     agent {
         dockerContainer {
             image 'maven:3.9.6-eclipse-temurin-22'
-            args '-v $HOME/.m2:/root/.m2'
         }
-    }
-    
-    environment {
-        MAVEN_OPTS = '-Dmaven.repo.local=/root/.m2/repository'
     }
     
     stages {
